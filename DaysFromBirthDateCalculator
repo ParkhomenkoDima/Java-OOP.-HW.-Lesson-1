@@ -1,0 +1,25 @@
+package OopHomeWork1;
+
+import java.time.LocalDate;
+
+public class DaysFromBirthDateCalculator {
+    public static void main(String[] args) {
+        /*Написать метод, находящий количество дней, прошедших с дня рождения человека.
+        День рождения задается в формате “YYYY-MM-DD”, где YYYY - год (4 цифры),
+        MM - номер месяца (2 цифры), DD - номер дня (2 цифры). Примеры формата: “1972-12-28”, “2005-05-01”.
+        Использовать класс java.time.LocalDate.
+        public static long daysFromBirthDate(String birthDateString) { … }*/
+
+        String birthDateString = "2018-11-01";
+
+        System.out.println("От даты " + birthDateString + " прошло " + daysFromBirthDate(birthDateString) + " дня (дней)");
+    }
+
+    public static long daysFromBirthDate(String birthDateString) {
+        String[] birthDateArr = birthDateString.split("-");
+
+        LocalDate birthDate = LocalDate.of(Integer.parseInt(birthDateArr[0]), Integer.parseInt(birthDateArr[1]), Integer.parseInt(birthDateArr[2]));
+
+        return LocalDate.now().toEpochDay()-birthDate.toEpochDay();
+    }
+}
