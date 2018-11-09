@@ -1,0 +1,31 @@
+package OopHomeWork1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class NamesWithStartLetterFinder {
+    public static void main(String[] args) {
+        /*Написать метод, находящий все имена, начинающиеся с буквы startLetter, в списке имен.
+        Использовать цикл for-each.
+        public static ArrayList<String> namesWithStartLetter(ArrayList<String> names, char startLetter) { … }*/
+
+        ArrayList<String> names = new ArrayList<>(Arrays.asList("Phil",
+                "Anny", "Aaron", "Bob", "Bill", "Anthony", "Arthur"));
+
+        char startLetter = 'A';
+
+        System.out.println(namesWithStartLetter(names, startLetter));
+    }
+
+    public static ArrayList<String> namesWithStartLetter(java.util.ArrayList<String> names, char startLetter) {
+        ArrayList <String> tmpArr = new ArrayList <String> ();
+
+        for (String s : names) {
+            if (s.charAt(0) == startLetter){
+                tmpArr.add(s);
+            }
+        }
+
+        return tmpArr;
+    }
+}
